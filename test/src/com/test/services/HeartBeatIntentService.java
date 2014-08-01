@@ -10,9 +10,17 @@ import java.util.Random;
 import java.util.UUID;
 
 import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 
 import com.test.JsonHelper;
+import com.test.MainActivity;
+import com.test.R;
 import com.test.ServerUtil;
 
 
@@ -153,8 +161,16 @@ public  class HeartBeatIntentService extends IntentService {
 				//e.printStackTrace();
 			}
 			//TODO handle response - maybe talk to server this way?
+			//for(int h = 0; h < 100; h++) System.out.println("Scanning For Alerts");
+			for(Map<String,Object> notice : notices) {
+				CreateSOSNotification(notice, currNotice);
+				currNotice++;
+				notices.remove(notice);
+			}
+			
 		}
 		
+		private int currNotice = 0;
 		
 		private String getURL() {
 			Random rand = new Random();
@@ -168,5 +184,45 @@ public  class HeartBeatIntentService extends IntentService {
 			String encoded = URLEncoder.encode(json);
 			return "http://api.cudl.io/heartbeat/?emie_heartbeat="+encoded;
 		}
-	  
+	    
+		
+		public static void CreateSOSNotification(Map<String,Object> map, int id) {
+			//for(int h = 0; h < 100; h++) System.out.println("Attempting Notification Push");
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.instance);
+            builder.setContentTitle("Someone nearby is in trouble");
+            Map<String,Object> street;
+            try{
+                   street = ServerUtil.parsedStreetRequest((Double)map.get("lat"),(Double)map.get("long"));
+            }catch(Exception e) {
+                   street = new HashMap<String,Object>();
+                   street.put("name","ERROR");
+            }
+            builder.setContentText("A " + map.get("gender") == "M" ? "man" : map.get("gender") == "F" ? "woman" : "person" + " neartby called "
+                          + map.get("name") + " is in trouble and needs help. " + (ServerUtil.isErroredData(street) ? "" : "And is near " + street.get("name")+".")
+                          + " Please can you assist");
+            
+            builder.setSubText("Heartbeat assistance request");
+            builder.setSmallIcon(R.drawable.ic_pad_lock);
+            //builder.setSmallIcon(icon); - TODO add the icons - What is the id???
+            
+            //TaskStackBuilder tStack = TaskStackBuilder.create(MainActivity.instance);
+            //tStack.addParentStack(MainActivity.class);
+            
+            //PendingIntent resultPendingIntent = tStack.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+            
+            //builder.setContentIntent(resultPendingIntent);
+            
+            
+            Intent CIntent = new Intent(heartbeat,MainActivity.class);
+            PendingIntent ContentIntent = PendingIntent.getActivity(heartbeat, 0,CIntent,0);
+            //builder.setContentIntent(intent)
+            
+            Notification notify = builder.build();
+            notify.contentIntent = ContentIntent;
+             ((NotificationManager)MainActivity.instance.getSystemService(Context.NOTIFICATION_SERVICE)).notify(id, notify);
+            
+            //TODO actually push the notification
+            
+      }
+		
 	}

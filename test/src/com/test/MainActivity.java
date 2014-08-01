@@ -51,11 +51,11 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 public void sendMessage (View view) {
-	/*try {
+	try {
 		HeartBeatIntentService.heartbeat.SendPanicToServer("Harri", 'M',LocationUtil.instance.best.getLatitude(), LocationUtil.instance.best.getLongitude());
 	} catch (IOException e1) {
 		//e1.printStackTrace();
-	}*/
+	}
 	
 	
 	
