@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.test.MedicalInfoDisplay" >
+
+    <Textview
+      android:id="@+id/NameView"
+      android:layout_width="100dp"
+      android:layout_height="50dp"  
+    />
+    
+    <Textview
+      android:id="@+id/MedConditionView"
+      android:layout_width="100dp"
+      android:layout_height="50dp"  
+    />
+    
+    <Textview
+      android:id="@+id/MedicationView"
+      android:layout_width="100dp"
+      android:layout_height="50dp"  
+    />
+
+    <Textview
+        android:id="@+id/OtherInfoView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="68dp"
+        android:layout_marginTop="100dp" />
+
+    <Textview
+        android:id="@+id/Name"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="54dp"
+        android:layout_marginTop="188dp" />
+
+    <Textview
+        android:id="@+id/MedCondition"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="156dp" />
+
+    <Textview
+        android:id="@+id/Medication"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="65dp"
+        android:layout_marginTop="103dp" />
+
+    <Textview
+        android:id="@+id/OtherNotes"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/NameView"
+        android:layout_alignBottom="@+id/NameView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="44dp" />
+
+</RelativeLayout>
