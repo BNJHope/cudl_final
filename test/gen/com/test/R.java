@@ -1089,14 +1089,14 @@ containing a value of this type.
         public static final int red_e=0x7f020060;
     }
     public static final class id {
-        public static final int MedCondition=0x7f05004a;
-        public static final int MedConditionView=0x7f050046;
-        public static final int Medication=0x7f05004b;
+        public static final int MedCondition=0x7f050048;
+        public static final int MedConditionView=0x7f05004c;
+        public static final int Medication=0x7f05004a;
         public static final int MedicationView=0x7f050047;
         public static final int Name=0x7f050049;
         public static final int NameView=0x7f050045;
-        public static final int OtherInfoView=0x7f050048;
-        public static final int OtherNotes=0x7f05004c;
+        public static final int OtherInfoView=0x7f050046;
+        public static final int OtherNotes=0x7f05004b;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f05001b;
@@ -1322,6 +1322,8 @@ containing a value of this type.
         public static final int medication=0x7f0a002a;
         public static final int messageConfirm=0x7f0a001b;
         public static final int openMap=0x7f0a002d;
+        public static final int openMedicalDetails=0x7f0a0034;
+        public static final int otherInformation=0x7f0a0035;
         public static final int otherNotes=0x7f0a0028;
         public static final int settings=0x7f0a0013;
         public static final int textBody=0x7f0a0014;

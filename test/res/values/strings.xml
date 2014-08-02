@@ -40,5 +40,7 @@
     <string name="enterMedicInfo">Enter Medical Information</string>
     <string name="detailsConfirm">Confirm Details</string>
     <string name="title_activity_medical_info_display">MedicalInfoDisplay</string>
+    <string name="openMedicalDetails">Open Medical Details</string>
+    <string name="otherInformation">Other Notes</string>
 
 </resources>

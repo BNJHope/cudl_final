@@ -17,24 +17,24 @@
         android:layout_marginTop="17dp"
         android:text="@string/SOSScreen2" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="showMedicalInformation"
+        android:text="@string/openMedicalDetails" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="200sp"
         android:layout_height="50sp"
+        android:layout_alignLeft="@+id/button2"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="26dp"
         android:text="@string/SOSScreen1" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
-        android:onClick="openMap"
-        android:text="@string/openMap" />
 
     <TextView
         android:id="@+id/textView3"
@@ -42,7 +42,17 @@
         android:layout_height="50sp"
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="15dp"
         android:text="@string/SOSScreen3" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:onClick="openMap"
+        android:text="@string/openMap" />
 
 </RelativeLayout>

@@ -16,6 +16,7 @@ import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.NotificationCompat;
 
 import com.test.JsonHelper;
@@ -203,19 +204,16 @@ public  class HeartBeatIntentService extends IntentService {
             
             builder.setSubText("Heartbeat assistance request");
             builder.setSmallIcon(R.drawable.ic_pad_lock);
-            //builder.setSmallIcon(icon); - TODO add the icons - What is the id???
-            
-            //TaskStackBuilder tStack = TaskStackBuilder.create(MainActivity.instance);
-            //tStack.addParentStack(MainActivity.class);
-            
-            //PendingIntent resultPendingIntent = tStack.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-            
-            //builder.setContentIntent(resultPendingIntent);
+            //builder.setLargeIcon(R.drawable.)
             
             
             Intent CIntent = new Intent(heartbeat,MainActivity.class);
             PendingIntent ContentIntent = PendingIntent.getActivity(heartbeat, 0,CIntent,0);
             //builder.setContentIntent(intent)
+            
+            builder.setLights(Color.GREEN,1000,500);
+            builder.setVibrate(new long[] {500,700,200,100,500,300});
+            //builder.set
             
             Notification notify = builder.build();
             notify.contentIntent = ContentIntent;

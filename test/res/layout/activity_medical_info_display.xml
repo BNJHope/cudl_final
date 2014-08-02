@@ -11,64 +11,66 @@
     <Textview
       android:id="@+id/NameView"
       android:layout_width="100dp"
-      android:layout_height="50dp"  
-    />
-    
-    <Textview
-      android:id="@+id/MedConditionView"
-      android:layout_width="100dp"
-      android:layout_height="50dp"  
-    />
-    
-    <Textview
-      android:id="@+id/MedicationView"
-      android:layout_width="100dp"
-      android:layout_height="50dp"  
+      android:layout_height="50dp" 
+      android:text="@string/Name" 
     />
 
     <Textview
         android:id="@+id/OtherInfoView"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="68dp"
-        android:layout_marginTop="100dp" />
-
-    <Textview
-        android:id="@+id/Name"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="54dp"
-        android:layout_marginTop="188dp" />
+        android:layout_below="@+id/MedicationView"
+        android:layout_alignRight="@+id/NameView"
+        android:layout_marginTop="20dp"
+        android:text="@string/otherInformation" />
 
     <Textview
         android:id="@+id/MedCondition"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="156dp" />
+        android:layout_below="@+id/Name"
+        android:layout_alignRight="@+id/Name"
+        android:layout_marginTop="20dp" />
 
     <Textview
         android:id="@+id/Medication"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="65dp"
-        android:layout_marginTop="103dp" />
+        android:layout_below="@+id/MedCondition"
+        android:layout_alignRight="@+id/MedCondition"
+        android:layout_marginTop="20dp" />
 
     <Textview
         android:id="@+id/OtherNotes"
         android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/Medication"
+        android:layout_alignRight="@+id/Medication"
+        android:layout_marginTop="20dp" />
+
+    <Textview
+        android:id="@+id/MedicationView"
+        android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_alignBaseline="@+id/NameView"
-        android:layout_alignBottom="@+id/NameView"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="44dp" />
+        android:layout_below="@+id/MedConditionView"
+        android:layout_alignRight="@+id/MedConditionView"
+        android:layout_marginTop="20dp"
+        android:text="@string/medication" />
+
+    <Textview
+        android:id="@+id/Name"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/NameView"
+        android:layout_marginLeft="200dp" />
+
+    <Textview
+        android:id="@+id/MedConditionView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/NameView"
+        android:layout_alignRight="@+id/NameView"
+        android:layout_marginTop="20dp"
+        android:text="@string/medicalCondition" />
 
 </RelativeLayout>
